@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "suculentapp",
+    "slug": "suculentapp",
+    "scheme": "suculentapp",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.example.with-new-arch"
+    },
+    "android": {
+      "package": "com.example.withnewarch"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "newArchEnabled": true
+          },
+          "android": {
+            "newArchEnabled": true
+          }
+        }
+      ],
+      "expo-router"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "8f8d61a0-9207-470a-9930-003525d2b694"
+      }
+    },
+    "splash": {
+      "backgroundColor": "#00FF00"
+    }
+  }
+}
