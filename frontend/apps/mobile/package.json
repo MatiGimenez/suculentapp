@@ -1,0 +1,42 @@
+{
+  "name": "mobile",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.ts",
+  "scripts": {
+    "dev": "expo start",
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "lint": "eslint .",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@expo-google-fonts/fraunces": "^0.4.1",
+    "@expo-google-fonts/karla": "^0.4.2",
+    "@suculentapp/core": "workspace:*",
+    "@suculentapp/ui": "workspace:*",
+    "@tamagui/config": "2.3.0",
+    "expo": "~55.0.6",
+    "expo-font": "~55.0.8",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "react-native": "0.83.6",
+    "react-native-gesture-handler": "~2.30.1",
+    "react-native-safe-area-context": "~5.6.2",
+    "react-native-svg": "15.15.3",
+    "react-native-web": "^0.21.2",
+    "tamagui": "2.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@suculentapp/config-eslint": "workspace:*",
+    "@suculentapp/tsconfig": "workspace:*",
+    "@types/react": "~19.2.0",
+    "babel-plugin-module-resolver": "^5.0.2",
+    "eslint": "^9",
+    "eslint-config-prettier": "^10.1.8",
+    "typescript": "~5.9.0"
+  }
+}

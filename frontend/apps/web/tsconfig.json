@@ -1,0 +1,14 @@
+{
+  "extends": "@suculentapp/tsconfig/base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "lib": ["es2022", "dom", "dom.iterable"],
+    "types": ["vite/client"],
+    "moduleResolution": "bundler",
+    "module": "esnext",
+    "allowJs": true,
+    "noEmit": true
+  },
+  "include": ["src", "vite.config.ts"],
+  "exclude": ["node_modules", "dist"]
+}

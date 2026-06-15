@@ -1,0 +1,176 @@
+// Datos demo para correr la app sin BFF ni Supabase configurados.
+import type { Alert, Plant, Post, User } from '../types'
+
+export const demoUser: User = {
+  id: 'u-demo',
+  email: 'demo@suculentapp.com',
+  name: 'Mati',
+  plan: 'free',
+  reputation: 4.8,
+  location: 'Buenos Aires, AR',
+  aiScansUsed: 0,
+  createdAt: '2026-01-10T12:00:00Z',
+}
+
+export const demoPlants: Plant[] = [
+  {
+    id: 'p-1',
+    userId: 'u-demo',
+    species: 'Echeveria elegans',
+    commonName: 'Rosa de alabastro',
+    substrate: 'Sustrato para cactus + perlita 30%',
+    potSize: '10 cm',
+    sunExposure: 'full_sun',
+    parentId: null,
+    status: 'active',
+    isPublic: true,
+    acquiredAt: '2025-09-12',
+    createdAt: '2025-09-12T15:00:00Z',
+    photos: [],
+    notes: 'Compacta y muy sana. Hijuelos en primavera.',
+  },
+  {
+    id: 'p-2',
+    userId: 'u-demo',
+    species: 'Crassula ovata',
+    commonName: 'Árbol de jade',
+    substrate: 'Tierra negra + arena gruesa',
+    potSize: '14 cm',
+    sunExposure: 'partial_shade',
+    parentId: null,
+    status: 'active',
+    isPublic: false,
+    acquiredAt: '2024-11-03',
+    createdAt: '2024-11-03T10:00:00Z',
+    photos: [],
+    notes: null,
+  },
+  {
+    id: 'p-3',
+    userId: 'u-demo',
+    species: 'Haworthia fasciata',
+    commonName: 'Planta cebra',
+    substrate: 'Mezcla mineral',
+    potSize: '8 cm',
+    sunExposure: 'indoor',
+    parentId: null,
+    status: 'active',
+    isPublic: true,
+    acquiredAt: '2026-02-20',
+    createdAt: '2026-02-20T18:30:00Z',
+    photos: [],
+    notes: 'En el escritorio, luz indirecta.',
+  },
+  {
+    id: 'p-4',
+    userId: 'u-demo',
+    species: 'Echeveria elegans',
+    commonName: 'Hijuelo de alabastro',
+    substrate: 'Sustrato para cactus',
+    potSize: '6 cm',
+    sunExposure: 'partial_shade',
+    parentId: 'p-1',
+    status: 'propagating',
+    isPublic: false,
+    acquiredAt: '2026-04-01',
+    createdAt: '2026-04-01T09:00:00Z',
+    photos: [],
+    notes: 'Propagación por hoja de la madre p-1.',
+  },
+]
+
+const today = new Date()
+const iso = (d: Date) => d.toISOString()
+const daysFromNow = (n: number) => {
+  const d = new Date(today)
+  d.setDate(d.getDate() + n)
+  return d
+}
+
+export const demoAlerts: Alert[] = [
+  {
+    id: 'a-1',
+    plantId: 'p-1',
+    type: 'watering',
+    frequencyDays: 10,
+    nextDue: iso(daysFromNow(0)),
+    lastDoneAt: iso(daysFromNow(-10)),
+    isActive: true,
+  },
+  {
+    id: 'a-2',
+    plantId: 'p-2',
+    type: 'fertilizing',
+    frequencyDays: 30,
+    nextDue: iso(daysFromNow(0)),
+    lastDoneAt: iso(daysFromNow(-30)),
+    isActive: true,
+  },
+  {
+    id: 'a-3',
+    plantId: 'p-3',
+    type: 'watering',
+    frequencyDays: 14,
+    nextDue: iso(daysFromNow(2)),
+    lastDoneAt: iso(daysFromNow(-12)),
+    isActive: true,
+  },
+  {
+    id: 'a-4',
+    plantId: 'p-4',
+    type: 'treatment',
+    frequencyDays: 7,
+    nextDue: iso(daysFromNow(0)),
+    lastDoneAt: null,
+    isActive: true,
+  },
+]
+
+export const demoPosts: Post[] = [
+  {
+    id: 'post-1',
+    userId: 'u-2',
+    userName: 'Carla S.',
+    userLocation: 'Córdoba, AR',
+    plantId: null,
+    kind: 'sale',
+    title: 'Echeveria Black Prince — 3 años',
+    content: 'Vendo ejemplar adulto, súper sano, con hijuelos. Entrego en zona centro.',
+    images: [],
+    price: 8500,
+    likesCount: 24,
+    repliesCount: 6,
+    createdAt: iso(daysFromNow(-1)),
+  },
+  {
+    id: 'post-2',
+    userId: 'u-3',
+    userName: 'Diego M.',
+    userLocation: 'Rosario, AR',
+    plantId: null,
+    kind: 'advice',
+    title: '¿Cochinillas en invierno?',
+    content:
+      'Les pasó que aparezcan cochinillas con el frío? Apliqué alcohol isopropílico pero vuelven.',
+    images: [],
+    price: null,
+    likesCount: 11,
+    repliesCount: 14,
+    createdAt: iso(daysFromNow(-2)),
+  },
+  {
+    id: 'post-3',
+    userId: 'u-4',
+    userName: 'Lu P.',
+    userLocation: 'Mendoza, AR',
+    plantId: null,
+    kind: 'trade',
+    title: 'Cambio Haworthia por Sedum',
+    content: 'Tengo hijuelos de Haworthia cooperi, busco Sedum morganianum. Trueque por correo.',
+    images: [],
+    price: null,
+    likesCount: 9,
+    repliesCount: 3,
+    createdAt: iso(daysFromNow(-3)),
+  },
+]

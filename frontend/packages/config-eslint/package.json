@@ -1,0 +1,18 @@
+{
+  "name": "@suculentapp/config-eslint",
+  "version": "0.1.0",
+  "private": true,
+  "exports": {
+    "./rules": "./rules.js",
+    "./react": "./react.js",
+    "./react-native": "./react-native.js"
+  },
+  "dependencies": {
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "typescript-eslint": "^8.57.0"
+  },
+  "peerDependencies": {
+    "eslint": ">=9.0.0"
+  }
+}

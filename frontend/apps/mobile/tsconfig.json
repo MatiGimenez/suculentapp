@@ -1,0 +1,13 @@
+{
+  "extends": "@suculentapp/tsconfig/react-native.json",
+  "compilerOptions": {
+    "paths": {
+      "~/*": ["./*"]
+    },
+    // Tamagui es universal y su fuente referencia tipos DOM (HTMLElement);
+    // añadimos 'dom' al lib aunque sea una app RN.
+    "lib": ["es2022", "dom"]
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", ".expo"]
+}

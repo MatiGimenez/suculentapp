@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="Todo lo que un criador de suculentas necesita: colección, cuidados, reconocedor IA y comunidad." />
+    <meta name="theme-color" content="#f8fbf9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#102b1a" media="(prefers-color-scheme: dark)" />
+    <title>Suculentapp 🌵</title>
+    <!-- Resuelve el tema antes del primer paint para evitar parpadeo (FOUC). -->
+    <script>
+      ;(function () {
+        try {
+          var m = localStorage.getItem('suculentapp:theme-mode')
+          var sys = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+          var scheme = m === 'light' || m === 'dark' ? m : sys
+          document.documentElement.setAttribute('data-theme', scheme)
+        } catch (e) {}
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

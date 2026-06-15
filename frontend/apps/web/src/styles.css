@@ -1,0 +1,76 @@
+/* Reset mínimo + atmósfera de la marca "invernadero": papel claro con un grano
+   verde sutil y un destello de dosel cálido-verde arriba. El theming real lo
+   aplica Tamagui vía TamaguiProvider; aquí sólo vive el lienzo del documento. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background-color: #f8fbf9;
+  /* Destello de dosel (verde claro arriba) + grano fino para textura orgánica. */
+  background-image:
+    radial-gradient(120% 80% at 50% -10%, rgba(154, 200, 162, 0.35) 0%, rgba(248, 251, 249, 0) 55%),
+    radial-gradient(rgba(37, 101, 59, 0.07) 0.5px, transparent 0.5px);
+  background-size:
+    100% 100%,
+    20px 20px;
+  background-attachment: fixed, scroll;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Tema oscuro "invernadero de noche": verde profundo con dosel tenue. El
+   atributo data-theme lo fija ThemeProvider (y un script inline en index.html
+   antes del primer paint para evitar parpadeo). */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+:root[data-theme='dark'] body {
+  background-color: #102b1a;
+  background-image:
+    radial-gradient(120% 80% at 50% -10%, rgba(76, 146, 95, 0.22) 0%, rgba(16, 43, 26, 0) 55%),
+    radial-gradient(rgba(154, 200, 162, 0.05) 0.5px, transparent 0.5px);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+/* Selección con la voz de la marca. */
+::selection {
+  background: rgba(216, 101, 59, 0.22);
+  color: #112719;
+}
+
+:root[data-theme='dark'] ::selection {
+  background: rgba(216, 101, 59, 0.36);
+  color: #f8fbf9;
+}
+
+/* La marca usa motion intencional (lift de tarjetas, escala de tabs). Quien
+   pide menos movimiento lo recibe: transiciones instantáneas, sin reflows. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

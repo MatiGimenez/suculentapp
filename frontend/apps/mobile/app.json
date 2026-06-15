@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "name": "Suculentapp",
+    "slug": "suculentapp",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "backgroundColor": "#faf6ee"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.suculentapp.app"
+    },
+    "android": {
+      "package": "com.suculentapp.app"
+    },
+    "plugins": [
+      "expo-font"
+    ]
+  }
+}
